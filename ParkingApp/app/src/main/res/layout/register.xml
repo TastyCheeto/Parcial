@@ -1,52 +1,48 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity"
     android:background="@drawable/background">
-
 
     <androidx.appcompat.widget.LinearLayoutCompat
         android:id="@+id/Compat"
-        android:background="@drawable/maincard"
         android:layout_width="350dp"
         android:layout_height="180dp"
+        android:background="@drawable/maincard"
         android:layout_marginTop="60dp"
+        android:orientation="vertical"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:orientation="vertical">
+        app:layout_constraintTop_toTopOf="parent">
 
         <TextView
 
             android:id="@+id/mainTittle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="30dp"
             android:layout_marginTop="10dp"
             android:layout_marginRight="30dp"
-            android:layout_marginLeft="30dp"
             android:text="@string/mainheader"
+            android:textAlignment="center"
             android:textColor="#EAECEA"
             android:textSize="24sp"
-            android:textStyle="bold"
-            android:textAlignment="center"
-            />
+            android:textStyle="bold" />
+
         <TextView
             android:id="@+id/textview2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="30dp"
+            android:layout_marginTop="20dp"
             android:layout_marginRight="30dp"
             android:text="@string/mainsub"
-            android:textSize="14sp"
-            android:textColor="#EAECEA"
             android:textAlignment="center"
-            android:layout_marginTop="20dp"/>
+            android:textColor="#EAECEA"
+            android:textSize="14sp" />
 
     </androidx.appcompat.widget.LinearLayoutCompat>
-
 
     <androidx.appcompat.widget.LinearLayoutCompat
         android:id="@+id/compat2"
@@ -62,14 +58,25 @@
 
         <EditText
             android:id="@+id/UsernameInput"
-            android:layout_marginTop="40dp"
+            android:layout_marginTop="20dp"
             android:layout_height="50dp"
             android:layout_width="290dp"
             android:background="@drawable/btnbackground"
             android:hint="Username"
             android:textAlignment="center"
             />
+
         <EditText
+            android:id="@+id/EmailInput"
+            android:layout_marginTop="20dp"
+            android:layout_height="50dp"
+            android:layout_width="290dp"
+            android:background="@drawable/btnbackground"
+            android:hint="Email"
+            android:textAlignment="center"
+            />
+        
+        <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/PassInput"
             android:layout_marginTop="20dp"
             android:layout_height="50dp"
@@ -78,19 +85,32 @@
             android:hint="Password"
             android:textAlignment="center"
             />
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/loginbutton"
-            android:layout_marginTop="70dp"
-            android:layout_height="50dp"
+
+        <LinearLayout
+            android:layout_marginTop="10dp"
             android:layout_width="290dp"
-            android:background="@drawable/btnbackground2"
-            android:text="Log in"
-            android:textColor="#000"
-            android:textStyle="bold"
-            />
+            android:layout_height="35dp">
+
+            <CheckBox
+                android:layout_gravity="center"
+                android:id="@+id/checkbox"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:layout_gravity="center"
+                android:id="@+id/TOS"
+                android:layout_width="wrap_content"
+                android:layout_height="35dp"
+                android:text="@string/TOS_warning"
+                android:textAlignment="center"
+                android:textSize="12sp"/>
+        </LinearLayout>
+
+        
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/signupbutton"
-            android:layout_marginTop="15dp"
+            android:layout_marginTop="30dp"
             android:layout_height="50dp"
             android:layout_width="290dp"
             android:background="@drawable/btnbackground3"
@@ -99,9 +119,6 @@
             />
 
     </androidx.appcompat.widget.LinearLayoutCompat>
-
-
-
-
+    
 
 </androidx.constraintlayout.widget.ConstraintLayout>
