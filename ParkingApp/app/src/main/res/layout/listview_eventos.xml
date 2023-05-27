@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#020303">
+
+    <androidx.cardview.widget.CardView
+        xmlns:card_view="http://schemas.android.com/apk/res-auto"
+        android:layout_width="350dp"
+        android:layout_height="310dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="50dp"
+        card_view:cardCornerRadius="15dp">
+        <ImageView
+            android:id="@+id/cardimage"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#0000"
+            android:scaleType="centerCrop"
+            />
+
+        <TextView
+            android:id="@+id/carddate"
+            android:layout_width="80dp"
+            android:layout_height="40dp"
+            android:text="oct 5"
+            android:background="#9F5B85"
+            android:textColor="#FFFF"
+            android:layout_marginTop="30dp"
+            android:textAlignment="center"
+            android:gravity="center"
+            android:textStyle="italic"
+            android:textSize="24dp"
+            />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:layout_gravity="bottom"
+            android:background="@drawable/incardtextbackgroud"
+            android:orientation="vertical">
+            <TextView
+                android:id="@+id/cardtittle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Alguna vaina bien danina party"
+                android:textSize="24sp"
+                android:textAlignment="center"
+                />
+            <TextView
+                android:id="@+id/cardlocation"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="TeatroCasco"
+                android:textSize="24sp"
+                android:textAlignment="center"
+                android:layout_marginBottom="10dp"
+                />
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
