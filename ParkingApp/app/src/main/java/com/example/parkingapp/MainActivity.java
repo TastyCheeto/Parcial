@@ -3,39 +3,43 @@ package com.example.parkingapp;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.annotation.SuppressLint;
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ListView;
+import android.widget.RadioGroup;
+import android.widget.Toast;
 
-public class MainActivity extends AppCompatActivity
-{
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.io.OutputStreamWriter;
+
+public class MainActivity extends AppCompatActivity {
+    Button login, signup;
+    EditText user, pass;
+
+    SharedPreferences preferences;
+
 
     @Override
-    protected void onCreate(Bundle savedInstanceState)
-    {
+    protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        Button next = (Button) findViewById(R.id.loginbutton);
-        next.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-               Intent intent = new Intent(getApplicationContext(), MainActivity2.class);
-               startActivity(intent);
-            }
-        });
+        InitiateControllers();
 
-        Button registernext = (Button) findViewById(R.id.signupbutton);
-        registernext.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(getApplicationContext(), register_Activity.class);
-                startActivity(intent);
-            }
-        });
+    }
+
+    private void InitiateControllers() {
+        user = findViewById(R.id.UsernameInput);
+        pass = findViewById(R.id.PassInput);
+        login = findViewById(R.id.loginbutton);
+        signup = findViewById(R.id.signupbutton);
 
     }
 

@@ -61,6 +61,7 @@
         android:orientation="vertical">
 
         <EditText
+            android:maxLines="1"
             android:id="@+id/UsernameInput"
             android:layout_marginTop="40dp"
             android:layout_height="50dp"
@@ -70,6 +71,7 @@
             android:textAlignment="center"
             />
         <EditText
+            android:maxLines="1"
             android:id="@+id/PassInput"
             android:layout_marginTop="20dp"
             android:layout_height="50dp"
@@ -77,6 +79,7 @@
             android:background="@drawable/btnbackground"
             android:hint="Password"
             android:textAlignment="center"
+            android:inputType="textPassword"
             />
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/loginbutton"
@@ -87,6 +90,7 @@
             android:text="Log in"
             android:textColor="#000"
             android:textStyle="bold"
+            android:onClick="login"
             />
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/signupbutton"
@@ -96,6 +100,7 @@
             android:background="@drawable/btnbackground3"
             android:text="Sign up"
             android:textColor="#ffff"
+            android:onClick="signup"
             />
 
     </androidx.appcompat.widget.LinearLayoutCompat>

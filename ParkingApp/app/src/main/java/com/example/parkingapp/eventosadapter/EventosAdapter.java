@@ -41,6 +41,9 @@ public class EventosAdapter extends ArrayAdapter<Eventos> {
         TextView fecha = (TextView) item.findViewById(R.id.carddate);
         fecha.setText(opciones.get(position).getDate());
 
+        TextView hora = (TextView) item.findViewById(R.id.cardtime);
+        hora.setText(opciones.get(position).getTime());
+
         return item;
 
     }

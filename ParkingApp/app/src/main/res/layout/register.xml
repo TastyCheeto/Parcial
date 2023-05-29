@@ -57,6 +57,7 @@
         android:orientation="vertical">
 
         <EditText
+            android:maxLines="1"
             android:id="@+id/UsernameInput"
             android:layout_marginTop="20dp"
             android:layout_height="50dp"
@@ -67,6 +68,7 @@
             />
 
         <EditText
+            android:maxLines="1"
             android:id="@+id/EmailInput"
             android:layout_marginTop="20dp"
             android:layout_height="50dp"
@@ -78,12 +80,14 @@
         
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/PassInput"
+            android:maxLines="1"
             android:layout_marginTop="20dp"
             android:layout_height="50dp"
             android:layout_width="290dp"
             android:background="@drawable/btnbackground"
             android:hint="Password"
             android:textAlignment="center"
+            android:inputType="textPassword"
             />
 
         <LinearLayout

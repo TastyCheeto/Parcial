@@ -39,7 +39,7 @@ public class partyselector_Activity extends AppCompatActivity
             eventos.add(evento);
             ComplexAdapter = new EventosAdapter(
                     getApplicationContext(),
-                    LlenarListViewCompuesto()
+                    eventos
             );
             lsteventos.setAdapter(ComplexAdapter);
         }
@@ -54,10 +54,10 @@ public class partyselector_Activity extends AppCompatActivity
 
     private List<Eventos> LlenarListViewCompuesto(){
         List<Eventos> eventos = new ArrayList<Eventos>();
-        eventos.add(new Eventos(R.drawable.unsplash2,"Demencia Demenciosa","Alla onde Sara","oct 10"));
-        eventos.add(new Eventos(R.drawable.unsplashart1, "Domingo de sexo", "ChuckECheese", "June 2"));
-        eventos.add(new Eventos(R.drawable.samanthaunsplash, "Fiesta de viejo", "Samaria sector 7", "June 6"));
-        eventos.add(new Eventos(R.drawable.aleksandrunsplash, "Ya no se que poner", "casa de bi+", "Jan 23"));
+        eventos.add(new Eventos(R.drawable.unsplash2,"Demencia Demenciosa","Alla onde Sara","oct 10","From 9:00Pm"));
+        eventos.add(new Eventos(R.drawable.unsplashart1, "Domingo de jager", "ChuckECheese", "June 2","From 10:00Pm"));
+        eventos.add(new Eventos(R.drawable.samanthaunsplash, "Fiesta de viejo", "Samaria sector 7", "June 6","From 11:00Pm"));
+        eventos.add(new Eventos(R.drawable.aleksandrunsplash, "Ya no se que poner", "casa de bi+", "Jan 23","From 10:00Pm"));
 
         return eventos;
     }
@@ -65,6 +65,18 @@ public class partyselector_Activity extends AppCompatActivity
     public boolean onCreateOptionsMenu(Menu menu){
         getMenuInflater().inflate(R.menu.menu,menu);
         return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item){
+        if(item.getItemId()==R.id.noidea){
+            Intent i = new Intent(getApplicationContext(), MainActivity2.class);
+            startActivity(i);
+        }
+        else{
+            Toast.makeText(this, "Opción no habilitada",Toast.LENGTH_SHORT).show();
+        }
+        return super.onOptionsItemSelected(item);
     }
 
 

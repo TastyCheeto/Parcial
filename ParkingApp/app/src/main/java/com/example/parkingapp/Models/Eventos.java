@@ -12,14 +12,17 @@ public class Eventos {
     private String Description;
     private String Date;
 
-    public Eventos(){
-    }
-    public Eventos(int f, String tittle, String location, String date){ //String description
+    private String Time;
+
+   public Eventos(){
+   }
+    public Eventos(int f, String tittle, String location, String date, String time){ //String description
         Image = f;
         Tittle = tittle;
         Location = location;
         //Description = description;
         Date = date;
+        Time = time;
     }
     public int getImage(){
         return Image;
@@ -60,12 +63,21 @@ public class Eventos {
         Date = date;
     }
 
+    public String getTime() {
+        return Time;
+    }
+
+    public void setTime(String time) {
+        Time = time;
+    }
+
     public Bundle EventsToBundle(){
         Bundle b = new Bundle();
         b.putString("tittle",this.getTittle());
         b.putString("location",this.getLocation());
         //b.putString("description",this.getDescription());
         b.putString("date",this.getDate());
+        b.putString("time",this.getTime());
         return b;
     }
 
@@ -75,7 +87,8 @@ public class Eventos {
                 b.getString("tittle"),
                 b.getString("location"),
                 //b.getString("description"),
-                b.getString("date")
+                b.getString("date"),
+                b.getString("time")
         );
     }
 
