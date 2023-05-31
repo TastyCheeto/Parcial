@@ -2,6 +2,7 @@ package com.example.parkingapp;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
@@ -21,6 +22,37 @@ public class register_Activity extends AppCompatActivity {
         setContentView(R.layout.register);
 
         InitiateControllers();
+
+        register.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                preferences = getSharedPreferences("mypref",MODE_PRIVATE);
+                String newUser = username.getText().toString();
+                String newPassword = password.getText().toString();
+                String newEmail = email.getText().toString();
+
+                try {
+                    if (newUser.isEmpty() || newEmail.isEmpty() || newPassword.isEmpty()){
+
+                        SharedPreferences.Editor editor = preferences.edit();
+
+                        editor.putString("User",newUser);
+                        editor.putString("Pass",newPassword);
+                        editor.putString("email",newEmail);
+                        editor.commit();
+
+                        Intent loginscreen = new Intent(register_Activity.this, MainActivity.class);
+                        startActivity(loginscreen);
+                    }
+                } catch (Exception e)
+                {
+                    Toast.makeText(register_Activity.this, "Failed to sign up", Toast.LENGTH_SHORT).show();
+                }
+
+            }
+        });
+
     }
 
     private void InitiateControllers(){
@@ -30,9 +62,4 @@ public class register_Activity extends AppCompatActivity {
         register = findViewById(R.id.signupbutton);
     }
 
-    public void emptyField(){
-        username.setText("");
-        password.setText("");
-        email.setText("");
-    }
 }

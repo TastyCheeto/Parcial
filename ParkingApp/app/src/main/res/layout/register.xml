@@ -78,7 +78,7 @@
             android:textAlignment="center"
             />
         
-        <androidx.appcompat.widget.AppCompatButton
+        <EditText
             android:id="@+id/PassInput"
             android:maxLines="1"
             android:layout_marginTop="20dp"
